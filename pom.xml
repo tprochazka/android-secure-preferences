@@ -75,7 +75,7 @@
 			<dependency>
 				<groupId>com.mkovacs.android.secure</groupId>
 				<artifactId>secure-storage-sample-app</artifactId>
-				<version>0.1.0-af-SNAPSHOT</version>
+				<version>0.1.0-af</version>
 				<type>jar</type>
 				<scope>provided</scope>
 			</dependency>
@@ -83,14 +83,14 @@
 				<groupId>com.mkovacs.android.secure</groupId>
 				<artifactId>secure-storage-sample-app</artifactId>
 				<type>apk</type>
-				<version>0.1.0-af-SNAPSHOT</version>
+				<version>0.1.0-af</version>
 				<classifier>${zipaligned-classifier}</classifier> <!-- classifier set according to the ran profile -->
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.mkovacs.android.secure</groupId>
 				<artifactId>secure-preferences</artifactId>
-				<version>0.1.0-af-SNAPSHOT</version>
+				<version>0.1.0-af</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.android</groupId>
@@ -370,7 +370,7 @@
 	</profiles>
 
 	<url>http://starhost.hu/andsecureprefs/</url>
-	<version>0.1.0-af-SNAPSHOT</version>
+	<version>0.1.0-af</version>
 
 
 </project>
