@@ -26,9 +26,9 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:kovmarci86@github.com/kovmarci86/android-secure-preferences.git</connection>
-		<developerConnection>scm:git:kovmarci86@github.com/kovmarci86/android-secure-preferences.git</developerConnection>
-		<url>git:git:kovmarci86@github.com/kovmarci86/android-secure-preferences.git</url>
+		<connection>scm:git:git@github.com:tprochazka/android-secure-preferences.git</connection>
+		<developerConnection>scm:git:git@github.com:tprochazka/android-secure-preferences.git</developerConnection>
+		<url>git:git:git@github.com:tprochazka/android-secure-preferences.git</url>
 	</scm>
 	<distributionManagement>
 	<repository>
@@ -75,7 +75,7 @@
 			<dependency>
 				<groupId>com.mkovacs.android.secure</groupId>
 				<artifactId>secure-storage-sample-app</artifactId>
-				<version>0.0.2-SNAPSHOT</version>
+				<version>0.1.0-af-SNAPSHOT</version>
 				<type>jar</type>
 				<scope>provided</scope>
 			</dependency>
@@ -83,14 +83,14 @@
 				<groupId>com.mkovacs.android.secure</groupId>
 				<artifactId>secure-storage-sample-app</artifactId>
 				<type>apk</type>
-				<version>0.0.2-SNAPSHOT</version>
+				<version>0.1.0-af-SNAPSHOT</version>
 				<classifier>${zipaligned-classifier}</classifier> <!-- classifier set according to the ran profile -->
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.mkovacs.android.secure</groupId>
 				<artifactId>secure-preferences</artifactId>
-				<version>0.0.2-SNAPSHOT</version>
+				<version>0.1.0-af-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.android</groupId>
@@ -370,7 +370,7 @@
 	</profiles>
 
 	<url>http://starhost.hu/andsecureprefs/</url>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.1.0-af-SNAPSHOT</version>
 
 
 </project>
