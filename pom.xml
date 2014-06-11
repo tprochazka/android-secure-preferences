@@ -4,6 +4,7 @@
 
 	<groupId>com.github.kovmarci86.android.secure</groupId>
 	<artifactId>secure-storage-parent</artifactId>
+	<version>1.0.1-af-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>secure-storage - Parent</name>
 
@@ -74,7 +75,7 @@
 			<dependency>
 				<groupId>com.github.kovmarci86.android.secure</groupId>
 				<artifactId>secure-storage-sample-app</artifactId>
-				<version>0.0.2-SNAPSHOT</version>
+				<version>1.0.1-af-SNAPSHOT</version>
 				<type>jar</type>
 				<scope>provided</scope>
 			</dependency>
@@ -82,14 +83,14 @@
 				<groupId>com.github.kovmarci86.android.secure</groupId>
 				<artifactId>secure-storage-sample-app</artifactId>
 				<type>apk</type>
-				<version>0.0.2-SNAPSHOT</version>
+				<version>1.0.1-af-SNAPSHOT</version>
 				<classifier>${zipaligned-classifier}</classifier> <!-- classifier set according to the ran profile -->
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.github.kovmarci86.android.secure</groupId>
 				<artifactId>secure-preferences</artifactId>
-				<version>0.0.2-SNAPSHOT</version>
+				<version>1.0.1-af-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.android</groupId>
@@ -369,7 +370,5 @@
 	</profiles>
 
 	<url>http://starhost.hu/andsecureprefs/</url>
-	<version>0.0.2-SNAPSHOT</version>
-
 
 </project>
