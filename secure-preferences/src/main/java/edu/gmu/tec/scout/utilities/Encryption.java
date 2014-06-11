@@ -66,7 +66,7 @@ public class Encryption implements EncryptionAlgorithm {
      * @throws EncryptionException On encryption exception.
      */
     @Override
-    public byte[] encrypt(byte[] plaintext) throws EncryptionException {
+    public synchronized byte[] encrypt(byte[] plaintext) throws EncryptionException {
         // returns byte array encrypted with key
         try {
             cipher.init(Cipher.ENCRYPT_MODE, skeySpec);
@@ -87,7 +87,7 @@ public class Encryption implements EncryptionAlgorithm {
      * @throws EncryptionException On ecryption exception.
      */
     @Override
-    public byte[] decrypt(byte[] ciphertext) throws EncryptionException {
+    public synchronized byte[] decrypt(byte[] ciphertext) throws EncryptionException {
         // returns byte array decrypted with key
         try {
             cipher.init(Cipher.DECRYPT_MODE, skeySpec);
