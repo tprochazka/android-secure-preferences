@@ -36,9 +36,8 @@
 	</developers>
 
 	<scm>
-		<connection>scm:git:kovmarci86@github.com/kovmarci86/android-secure-preferences.git</connection>
-		<developerConnection>scm:git:kovmarci86@github.com/kovmarci86/android-secure-preferences.git</developerConnection>
-		<url>git:git:kovmarci86@github.com/kovmarci86/android-secure-preferences.git</url>
+		<connection>scm:git:git@github.com:tprochazka/android-secure-preferences.git</connection>
+		<developerConnection>scm:git:git@github.com:tprochazka/android-secure-preferences.git</developerConnection>
 	</scm>
 
 	<distributionManagement>
