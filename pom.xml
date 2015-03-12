@@ -56,7 +56,7 @@
 
 	<properties>
 		<platform.version>4.1.1.4</platform.version>
-		<android.plugin.version>3.6.0</android.plugin.version>
+		<android.plugin.version>4.1.0</android.plugin.version>
 		<github.global.server>github</github.global.server>
 		<github.global.oauth2Token />
 		<repositoryName>android-secure-preferences</repositoryName>
@@ -188,7 +188,7 @@
 					<version>2.5</version>
 				</plugin>
 				<plugin>
-					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
+					<groupId>com.simpligility.maven.plugins</groupId>
 					<artifactId>android-maven-plugin</artifactId>
 					<version>${android.plugin.version}</version>
 					<inherited>true</inherited>
@@ -197,6 +197,7 @@
 						<assetsDirectory>${project.basedir}/assets</assetsDirectory>
 						<resourceDirectory>${project.basedir}/res</resourceDirectory>
 						<nativeLibrariesDirectory>${project.basedir}/src/main/native</nativeLibrariesDirectory>
+						<failOnNonStandardStructure>false</failOnNonStandardStructure>
 						<sdk>
 							<platform>8</platform>
 						</sdk>
