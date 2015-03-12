@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.github.kovmarci86.android.secure</groupId>
@@ -13,7 +14,13 @@
 		<module>secure-storage-it</module>
 		<module>secure-preferences</module>
 	</modules>
-
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
 	<developers>
 		<developer>
 			<name>Marcell Kovacs (kovmarci86)</name>
@@ -49,11 +56,14 @@
 
 	<properties>
 		<platform.version>4.1.1.4</platform.version>
+		<android.plugin.version>3.6.0</android.plugin.version>
 		<github.global.server>github</github.global.server>
 		<github.global.oauth2Token />
 		<repositoryName>android-secure-preferences</repositoryName>
 		<repositoryOwner>kovmarci86</repositoryOwner>
-		<android.plugin.version>3.6.0</android.plugin.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<checkstyle.directory>${basedir}/code-quality</checkstyle.directory>
 	</properties>
 
 	<reporting>
@@ -137,6 +147,47 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>2.9.1</version>
+					<configuration>
+						<configLocation>${checkstyle.directory}/android_checks.xml</configLocation>
+						<propertyExpansion>samedir=${checkstyle.directory}</propertyExpansion>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.2.1</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<phase>install</phase>
+							<goals>
+								<goal>jar-no-fork</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.9.1</version>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<phase>install</phase>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5</version>
+				</plugin>
+				<plugin>
 					<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 					<artifactId>android-maven-plugin</artifactId>
 					<version>${android.plugin.version}</version>
@@ -154,23 +205,17 @@
 				</plugin>
 				<plugin>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>2.5.1</version>
+					<version>3.1</version>
 					<inherited>true</inherited>
 					<configuration>
 						<source>1.6</source>
 						<target>1.6</target>
+						<encoding>UTF-8</encoding>
 					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-enforcer-plugin</artifactId>
 					<version>1.0</version>
-				</plugin>
-				<plugin>
-					<artifactId>maven-release-plugin</artifactId>
-					<version>2.1</version>
-					<configuration>
-						<autoVersionSubmodules>true</autoVersionSubmodules>
-					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>maven-jarsigner-plugin</artifactId>
@@ -224,13 +269,21 @@
 						<reportPlugins>
 							<plugin>
 								<groupId>org.codehaus.mojo</groupId>
-								<artifactId>emma-maven-plugin</artifactId>
-								<version>1.0-alpha-3</version>
+								<artifactId>cobertura-maven-plugin</artifactId>
+								<version>2.6</version>
+							</plugin>
+							<plugin>
+								<groupId>org.apache.maven.plugins</groupId>
+								<artifactId>maven-javadoc-plugin</artifactId>
+								<version>2.9.1</version>
 							</plugin>
 							<plugin>
 								<groupId>org.apache.maven.plugins</groupId>
 								<artifactId>maven-checkstyle-plugin</artifactId>
-								<version>2.9.1</version>
+								<configuration>
+									<configLocation>${checkstyle.directory}/android_checks.xml</configLocation>
+									<propertyExpansion>samedir=${checkstyle.directory}</propertyExpansion>
+								</configuration>
 							</plugin>
 							<plugin>
 								<groupId>org.apache.maven.plugins</groupId>
@@ -242,6 +295,23 @@
 								</configuration>
 							</plugin>
 						</reportPlugins>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.4.1</version>
+					<dependencies>
+						<dependency>
+							<groupId>org.apache.maven.scm</groupId>
+							<artifactId>
+								maven-scm-provider-gitexe
+							</artifactId>
+							<version>1.8.1</version>
+						</dependency>
+					</dependencies>
+					<configuration>
+						<autoVersionSubmodules>true</autoVersionSubmodules>
 					</configuration>
 				</plugin>
 			</plugins>
