@@ -1,16 +1,10 @@
 package com.github.kovmarci86.android.secure.preferences.encryption;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.io.*;
 
 import android.content.SharedPreferences;
 import android.util.Base64;
+import android.util.Log;
 
 /**
  * Encrypting / decrypting support algorithms and type conversions.
@@ -18,7 +12,8 @@ import android.util.Base64;
  *
  */
 public class EncryptionHelper {
-    private static final Logger LOGGER = LoggerFactory.getLogger(EncryptionHelper.class);
+
+    //private static final Logger LOGGER = LoggerFactory.getLogger(EncryptionHelper.class);
     private EncryptionAlgorithm encryption;
 
     /**
@@ -46,9 +41,11 @@ public class EncryptionHelper {
             try {
                 result = (T) ois.readObject();
             } catch (IOException e) {
-                LOGGER.error("Error reading value by key: {}", key, e);
+                //LOGGER.error("Error reading value by key: {}", key, e);
+                Log.wtf("secure-prefs", "Error reading value by key: {" + key + "}", e);
             } catch (ClassNotFoundException e) {
-                LOGGER.error("Error reading value by key: {}", key, e);
+                //LOGGER.error("Error reading value by key: {}", key, e);
+                Log.wtf("secure-prefs", "Error reading value by key: {" + key + "}", e);
             }
         }
         return result;
@@ -72,9 +69,11 @@ public class EncryptionHelper {
                 byte[] encrypt = encryption.encrypt(byteArray);
                 result = Base64.encodeToString(encrypt, Base64.DEFAULT);
             } catch (IOException e) {
-                LOGGER.error("Error encoding value", e);
+                //LOGGER.error("Error encoding value", e);
+                Log.wtf("secure-prefs", "Error encoding value", e);
             } catch (EncryptionException e) {
-                LOGGER.error("Error encoding value", e);
+                //LOGGER.error("Error encoding value", e);
+                Log.wtf("secure-prefs", "Error encoding value", e);
             }
         }
         return result;
@@ -87,7 +86,8 @@ public class EncryptionHelper {
             try {
                 result = createDecodedObjectStream(stringValue);
             } catch (EncryptionException e) {
-                LOGGER.error("Error reading from properties. Key: {}", key, e);
+                //LOGGER.error("Error reading from properties. Key: {}", key, e);
+                Log.wtf("secure-prefs", "\"Error reading from properties. Key: {" + key + "}", e);
                 result = null;
             }
         } else {

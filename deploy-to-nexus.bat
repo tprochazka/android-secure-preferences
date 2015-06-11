@@ -1,0 +1,1 @@
+mvn clean source:jar deploy -DaltDeploymentRepository=nexus::default::https://ida.inmite.eu/nexus/content/repositories/thirdparty -DskipTests

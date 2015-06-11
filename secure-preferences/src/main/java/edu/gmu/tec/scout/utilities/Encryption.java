@@ -21,10 +21,7 @@ import com.github.kovmarci86.android.secure.preferences.encryption.EncryptionExc
  * @author http://www.java2s.com/Code/Android/Security/AESEncryption.htm
  */
 public class Encryption implements EncryptionAlgorithm {
-    /**
-     * Author of the base of this implementation.
-     */
-    public static final String UTILS_AUTHOR = "http://www.java2s.com/Code/Android/Security/AESEncryption.htm";
+
     private SecretKeySpec skeySpec;
     private Cipher cipher;
 
