@@ -4,7 +4,7 @@
 
 	<groupId>com.github.kovmarci86.android.secure</groupId>
 	<artifactId>secure-storage-parent</artifactId>
-	<version>1.0.2-af</version>
+	<version>1.0.3-af-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>secure-storage - Parent</name>
 
@@ -44,7 +44,7 @@
 	<scm>
 		<connection>scm:git:git@github.com:tprochazka/android-secure-preferences.git</connection>
 		<developerConnection>scm:git:git@github.com:tprochazka/android-secure-preferences.git</developerConnection>
-	  <tag>secure-storage-parent-1.0.2-af</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 	<distributionManagement>
@@ -85,7 +85,7 @@
 			<dependency>
 				<groupId>com.github.kovmarci86.android.secure</groupId>
 				<artifactId>secure-storage-sample-app</artifactId>
-				<version>1.0.2-af</version>
+				<version>1.0.3-af-SNAPSHOT</version>
 				<type>jar</type>
 				<scope>provided</scope>
 			</dependency>
@@ -93,14 +93,14 @@
 				<groupId>com.github.kovmarci86.android.secure</groupId>
 				<artifactId>secure-storage-sample-app</artifactId>
 				<type>apk</type>
-				<version>1.0.2-af</version>
+				<version>1.0.3-af-SNAPSHOT</version>
 				<classifier>${zipaligned-classifier}</classifier> <!-- classifier set according to the ran profile -->
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>com.github.kovmarci86.android.secure</groupId>
 				<artifactId>secure-preferences</artifactId>
-				<version>1.0.2-af</version>
+				<version>1.0.3-af-SNAPSHOT</version>
 			</dependency>
 			<dependency>
 				<groupId>com.google.android</groupId>
